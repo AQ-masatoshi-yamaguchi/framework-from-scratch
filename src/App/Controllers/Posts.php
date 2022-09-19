@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Core\Controller;
+use Core\View;
 
 class Posts extends Controller
 {
@@ -10,12 +11,13 @@ class Posts extends Controller
      * Show the index page
      *
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
      */
     public function indexAction(): void
     {
-        echo 'Hello from the index action in the Posts controller!';
-        echo '<p>Query string parameters: <pre>' .
-            htmlspecialchars(print_r($_GET, true)) . '</pre></p>';
+        View::renderTemplate('Posts/index.html');
     }
 
     /**
