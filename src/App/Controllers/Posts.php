@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Post;
 use Core\Controller;
 use Core\View;
 
@@ -17,7 +18,11 @@ class Posts extends Controller
      */
     public function indexAction(): void
     {
-        View::renderTemplate('Posts/index.html');
+        $posts = Post::getAll();
+
+        View::renderTemplate('Posts/index.html', [
+            'posts' => $posts
+        ]);
     }
 
     /**
