@@ -2,7 +2,8 @@
 
 use Core\Router;
 
-require_once dirname(__DIR__) . '/vendor/Twig/lib/Twig/Autoloader.php';
+require '../vendor/autoload.php';
+
 Twig_Autoloader::register();
 
 spl_autoload_register(function ($class) {
