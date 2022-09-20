@@ -6,13 +6,13 @@ use const EXTR_SKIP;
 
 class View
 {
-
     /**
      * Render a view file
      *
-     * @param string $view  The view file
+     * @param string $view The view file
      *
      * @return void
+     * @throws \Exception
      */
     public static function render(string $view, array $args = [])
     {
@@ -23,7 +23,7 @@ class View
         if (is_readable($file)) {
             require $file;
         } else {
-            echo "$file not found";
+            throw new \Exception("$file not found");
         }
     }
 

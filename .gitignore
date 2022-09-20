@@ -3,3 +3,4 @@ docker/nginx/log
 .phpunit.result.cache
 
 /src/vendor
+/src/logs/
